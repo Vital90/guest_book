@@ -23,6 +23,7 @@ services:
     container_name: php
     ports:
       - "9001:9000"
+    command: sh -c 'composer install && php artisan migrate && php-fpm'
 
   mysql:
     container_name: db
